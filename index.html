@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Color Tester V2</title>
+  <title>Theme Tester</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -19,7 +19,7 @@
       var p3 = Number("0x" + x.slice(5,7));
       var ele = document.getElementsByClassName('card-top');
       for (var i = 0; i < ele.length; i++ ) {
-          ele[i].style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .5 + ")";
+          ele[i].style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .65 + ")";
       }
 
       document.getElementById("primary-nav").style.background = x;
@@ -64,17 +64,29 @@
       var i = document.getElementById("color-primary").value;
       document.getElementById("underlined2").style.borderColor = i;
     }
-    function logoSelect() {
-      var g = document.getElementById("logo1").value;
-      if (g) {
-        var startIndex = (g.indexOf('\\') >= 0 ? g.lastIndexOf('\\') : g.lastIndexOf('/'));
-        var filename = g.substring(startIndex);
-        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-            filename = filename.substring(1);
+
+    function previewFile() {
+        // Where you will display your image
+        var preview = document.getElementById('logo');
+        // The button where the user chooses the local image to display
+        var file = document.getElementById('logo1').files[0];
+        // FileReader instance
+        var reader  = new FileReader();
+
+        // When the image is loaded we will set it as source of
+        // our img tag
+        reader.onloadend = function () {
+          preview.src = reader.result;
+        }
+
+        
+        if (file) {
+          // Load image as a base64 encoded URI
+          reader.readAsDataURL(file);
+        } else {
+          preview.src = "";
         }
       }
-      document.getElementById("logo").src = filename;
-    }
 
   </script>
 
@@ -398,7 +410,7 @@
     }
 
     .card-top {
-      background: rgba(165,0,0,.5);
+      background: rgba(165,0,0,.65);
       height: 80px;
       border-radius: 5px 5px 0 0;
     }
@@ -445,7 +457,7 @@
   <div class="primary-nav" id="primary-nav">
 
     <div>
-      <a href="#"><img id="logo" class="logo" src="chicago-logo.png"></a>
+      <a href="#"><img id="logo" class="logo" src="https://mag.uchicago.edu/themes/bootstrap/img/uchicago-logo1.png"></a>
     </div>
 
     <div class="searchbar input-group">
@@ -508,7 +520,7 @@
           <td>Text color</td>
         </tr>
         <tr>
-          <td><input style="width: 66%" onchange="logoSelect()" class="inp" type="file" value="chicago-logo.png" id="logo1"></td>
+          <td><input style="width: 100%" onchange="previewFile()" class="inp" type="file" value="https://mag.uchicago.edu/themes/bootstrap/img/uchicago-logo1.png" id="logo1"></td>
           <td>Logo source</td>
         </tr>
       </table>
