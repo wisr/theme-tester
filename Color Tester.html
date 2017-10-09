@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Color Tester V2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script>
+    function colorSelect() {
+      var x = document.getElementById("color-primary").value;
+
+      var p1 = Number("0x" + x.slice(1,3));
+      var p2 = Number("0x" + x.slice(3,5));
+      var p3 = Number("0x" + x.slice(5,7));
+      var ele = document.getElementsByClassName('card-top');
+      for (var i = 0; i < ele.length; i++ ) {
+          ele[i].style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .5 + ")";
+      }
+
+      document.getElementById("primary-nav").style.background = x;
+      document.getElementById("name1").style.color = x;
+      document.getElementById("name2").style.color = x;
+      document.getElementById("name3").style.color = x;
+      document.getElementById("name4").style.color = x;
+      document.getElementById("card-btn1").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn2").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn3").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn4").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn5").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn6").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn7").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+      document.getElementById("card-btn8").style.background = "rgba(" + p1 + "," + p2 + "," + p3 + "," + .9 + ")";
+
+      var y = document.getElementById("color-secondary").value;
+      document.getElementById("footer").style.background = y;
+
+
+
+      var z = document.getElementById("color-text").value;
+      document.getElementById("body").style.color = z;
+      document.getElementById("account-ops-sm").style.color = z;
+      document.getElementById("dashboard").style.color = z;
+      document.getElementById("explore").style.color = z;
+      document.getElementById("calls").style.color = z;
+      document.getElementById("chats").style.color = z;
+      document.getElementById("account-lg").style.color = z;
+      document.getElementById("account-sm").style.color = z;
+
+      var a = document.getElementById("color-text").value;
+      document.getElementById("footer").style.color = a;
+
+      document.getElementById("search-button").style.background = "#FFFFFF";
+
+      document.getElementById("search-button").style.color = "#808080";
+
+      var h = document.getElementById("color-text").value;
+      document.getElementById("underlined").style.borderColor = h;
+
+      var i = document.getElementById("color-primary").value;
+      document.getElementById("underlined2").style.borderColor = i;
+    }
+    function logoSelect() {
+      var g = document.getElementById("logo1").value;
+      if (g) {
+        var startIndex = (g.indexOf('\\') >= 0 ? g.lastIndexOf('\\') : g.lastIndexOf('/'));
+        var filename = g.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+      }
+      document.getElementById("logo").src = filename;
+    }
+
+  </script>
+
+  <script>
+    function colorSelect2() {
+      var d = document.getElementById("color-secondary").value;
+      document.getElementById("search-button").style.background = d;
+
+      var e = document.getElementById("color-text").value;
+      document.getElementById("search-button").style.color = e;
+    }
+    function colorSelect3() {
+      document.getElementById("dashboard").style.color = "#DDDDDD";
+    }
+    function colorSelect4() {
+      document.getElementById("explore").style.color = "#DDDDDD";
+    }
+    function colorSelect5() {
+      document.getElementById("calls").style.color = "#DDDDDD";
+    }
+    function colorSelect6() {
+      document.getElementById("chats").style.color = "#DDDDDD";
+    }
+    function colorSelect7() {
+      document.getElementById("account-lg").style.color = "#DDDDDD";
+    }
+    function colorSelect8() {
+      document.getElementById("account-sm").style.color = "#DDDDDD";
+    }
+  </script>
+
+
+
+
+  <style>
+
+    body {
+      font-family: avenir next;
+      color: white;
+    }
+
+    hr {
+      border-top: 1px solid darkgrey;
+    }
+
+    .primary-nav {
+      background: #A50000;
+    }
+    @media (min-width: 992px) {
+      .primary-nav {
+        height: 78px;
+      }
+    }
+
+    .secondary-nav {
+      background: #ededed;
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      padding-left: 4%;
+      padding-top: 12px;
+      color: #404040;
+      font-size: 12px;
+    }
+    @media (min-width: 992px) {
+      .secondary-nav {
+        position: absolute;
+        padding-left: 4%;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #secondary-navops {
+        position: absolute;
+        margin-top: -2px;
+        left: 34px;
+        top: 0;
+      }
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+      display: block;
+      margin: auto;
+      padding-top: 20px;
+    }
+    @media (min-width: 992px) {
+      .logo {
+        height: 40px;
+        margin: 20px;
+        margin-left: 40px;
+        padding-top: 0;
+        float: left;
+      }
+    }
+
+    .avatar {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -8px;
+      margin-left: 10px;
+    }
+    @media (max-width: 991px) {
+      #account-ops-lg, li.account-lg {
+        display: none;
+      }
+    }
+
+    .searchbar {
+      width: 90%;
+      margin: auto;
+      padding-top: 15px;
+    }
+    @media (min-width: 992px) {
+      .searchbar {
+        width: 30%;
+        float: left;
+        padding-left: 15px;
+        padding-top: 22px;
+      }
+    }
+
+    .form-control {
+      border: none;
+    }
+
+    .btn {
+      background: white;
+      color: grey;
+      border: none;
+    }
+
+    .btn:hover {
+      background: #DDDDDD;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+    @media (min-width: 992px) {
+      .nav-list {
+        display: inherit;
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    @media (min-width: 992px) {
+      ul {
+        float: right;
+        padding-right: 34px;
+        padding-top: 12px;
+      }
+    }
+
+    li {
+      float: left;
+    }
+
+    li > a {
+      display: block;
+      text-align: center;
+      padding: 6px 6px;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: gray;
+    }
+
+    #underlined {
+      padding-bottom: 3px;
+      border-bottom: 3px solid;
+      border-color: #FFFFFF;
+    }
+
+    #underlined2 {
+      padding-bottom: 3px;
+      border-bottom: 3px solid;
+      border-color: #A50000;
+    }
+
+    #account-ops-lg {
+      position: absolute;
+      right: 0px;
+      top: 78px;
+      width: 260px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 1px solid darkgrey;
+      background: white;
+      color: #404040;
+      z-index: 1;
+      box-shadow: -1px 1px 2px gray
+    }
+
+    #account-ops-sm {
+      width: 90%;
+      margin: auto;
+      margin-top: -10px;
+      padding-bottom: 20px;
+      color: white;
+    }
+    @media (min-width: 992px) {
+      #account-ops-sm, li.account-sm {
+        display: none;
+      }
+    }
+
+    .account-ops-sm {
+      font-size: 14px;
+    }
+
+    .weight-500 {
+      font-weight: 500;
+    }
+
+    .light-grey {
+      color: grey;
+    }
+
+    p {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      background: #404040;
+      height: 44px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 15px;
+      margin-top: 10px;
+    }
+
+    .picker-toggle {
+      position: absolute;
+      right: 40px;
+      bottom: 215px;
+      color: grey;
+      z-index: 1;
+    }
+    @media (max-width: 992px) {
+      .picker-toggle {
+        position: absolute;
+        right: 5%;
+      }
+    }
+
+    .picker {
+      position: absolute;
+      z-index: 10;
+      right: 40px;
+      bottom: 60px;
+      color: #404040;
+      float: right;
+    }
+    @media (max-width: 992px) {
+      .picker {
+        right: 5%;
+      }
+    }
+
+    td {
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 156px;
+      background: rgba(255,255,255,.75);
+      font-size: 14px;6
+    }
+    @media (max-width: 992px) {
+      td {
+        width: 155px;
+      }
+    }
+
+    .inp {
+      float: right;
+    }
+
+    h2 {
+      position: absolute;
+      margin-top: 70px;
+      color: #404040;
+      margin-left: 40px;
+      border-bottom: 1px solid #DDDDDD;
+      padding-bottom: 15px;
+      width: 92%;
+    }
+
+    .row {
+      width: 100%;
+      margin-left: 25px;
+      padding-right: 65px;
+      margin-top: 150px;
+      color: #404040;
+    }
+
+    .contact-card {
+      background: #ededed;
+      margin-bottom: 25px;
+      height: 350px;
+      box-shadow: 1px 1px 3px gray;
+      border-radius: 5px;
+    }
+
+    .card-top {
+      background: rgba(165,0,0,.5);
+      height: 80px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .card-avatar {
+      border-radius: 50%;
+      border: 5px solid #ededed;
+      width: 90px;
+      height: 90px;
+      display: block;
+      margin: auto;
+      margin-top: -40px;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #A50000;
+    }
+
+    .card-info {
+      padding-left: 30px;
+    }
+
+    .btn-group {
+      text-align: center;
+    }
+
+    .card-btn {
+      background: rgba(165,0,0,.9);
+      color: white;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+
+
+<body id="body">
+
+  <!-- primary horizontal navbar -->
+  <div class="primary-nav" id="primary-nav">
+
+    <div>
+      <a href="#"><img id="logo" class="logo" src="chicago-logo.png"></a>
+    </div>
+
+    <div class="searchbar input-group">
+      <input type="text" class="form-control" placeholder="Search...">
+      <span class="input-group-btn">
+        <button onmouseover="colorSelect2()" onmouseout="colorSelect()" id="search-button" class="btn" type="button"><i class="fa fa-search"></i></button>
+      </span>
+    </div>
+
+    <div class="nav-list">
+      <ul>
+        <li><a onmouseover="colorSelect3()" onmouseout="colorSelect()" id="dashboard" class="nav-op" href="#">Dashboard</a></li>
+        <li><a onmouseover="colorSelect4()" onmouseout="colorSelect()" id="explore" class="nav-op" href="#"><span id="underlined">Explore</span></a></li>
+        <li><a onmouseover="colorSelect5()" onmouseout="colorSelect()" id="calls" class="nav-op" href="#">Calls</a></li>
+        <li><a onmouseover="colorSelect6()" onmouseout="colorSelect()" id="chats" class="nav-op" href="#">Chats</a></li>
+        <li class="account-lg">
+          <a onmouseover="colorSelect7()" onmouseout="colorSelect()" id="account-lg" class="nav-op" data-toggle="collapse" href="#account-ops-lg"><img class="avatar" src="https://claralieu.files.wordpress.com/2016/06/deepti-headshot-square.jpg?w=848"> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="account-sm">
+          <a onmouseover="colorSelect8()" onmouseout="colorSelect()" id="account-sm" class="nav-op" data-toggle="collapse" href="#account-ops-sm">Account <i class="fa fa-caret-down"></i></a>
+        </li><br>
+      </ul>
+    </div>
+
+    <!-- account menu for desktop up -->
+    <div class="collapse account-ops-lg" id="account-ops-lg">
+      <br><span class="light-grey">Signed in as <span class="weight-500">Genevieve Amante</span></span>
+      <hr><a href="#">View your profile</a>
+      <br><a href="#">View your connections</a>
+      <br><a href="#">Account settings</a>
+      <hr><a href="#">Help</a>
+      <br><a href="#">Sign out</a><br><br>
+    </div>
+
+    <!-- account menu for tablet down -->
+    <div class="collapse account-ops-sm" id="account-ops-sm">
+      <hr>Signed in as <span class="weight-500">Genevieve Amante</span>
+      <hr><a href="#">View your profile</a>
+      <br><a href="#">View your connections</a>
+      <br><a href="#">Account settings</a>
+      <hr><a href="#">Help</a>
+      <br><a href="#">Sign out</a>
+    </div>
+
+    <div class="picker-toggle">
+      <a data-toggle="collapse" href="#color-tool">See color options <i class="fa fa-caret-down"></i></a>
+    </div>
+    <div class="collapse show picker" id="color-tool">
+      <table>
+        <tr>
+          <td><input onchange="colorSelect()" class="inp" type="color" value="#A50000" id="color-primary"></td>
+          <td>Primary color</td>
+        </tr>
+        <tr>
+          <td><input onchange="colorSelect()" class="inp" type="color" value="#404040" id="color-secondary"></td>
+          <td>Secondary color</td>
+        </tr>
+        <tr>
+          <td><input onchange="colorSelect()" class="inp" type="color" value="#FFFFFF" id="color-text"></td>
+          <td>Text color</td>
+        </tr>
+        <tr>
+          <td><input style="width: 66%" onchange="logoSelect()" class="inp" type="file" value="chicago-logo.png" id="logo1"></td>
+          <td>Logo source</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+
+  <div class="secondary-nav" id="secondary-nav">
+    <ul id="secondary-navops">
+      <li><a href="#">Industries</a></li>
+        <li><a href="#"><span id="underlined2">Communities</span></a></li>
+    </ul>
+  </div>
+
+  <h2>Massive Heading</h2>
+
+  <!-- card grid -->
+  <div class="row" style="width: 100%">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="contact-card">
+        <div class="card-top"></div>
+        <img class="card-avatar" src="https://claralieu.files.wordpress.com/2016/06/deepti-headshot-square.jpg?w=848">
+        <div id="name1" class="name text-center">Meghana Ananth</div>
+        <div class="text-center">Super Cool Job Title</div><br>
+        <div class="card-info">Student</div>
+        <div class="card-info">2018 B.A., Economics</div>
+        <div class="card-info">Grand Rapids, MI</div><br>
+        <div class="text-center">
+          <div class="btn-group" role="group">
+            <button id="card-btn1" type="button" class="btn card-btn">View Profile</button>
+            <button id="card-btn2" type="button" class="btn card-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Request a call</a>
+              <a class="dropdown-item" href="#">Send a message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="contact-card">
+        <div class="card-top"></div>
+        <img class="card-avatar" src="https://claralieu.files.wordpress.com/2016/06/deepti-headshot-square.jpg?w=848">
+        <div id="name2" class="name text-center">Meghana Ananth</div>
+        <div class="text-center">Super Cool Job Title</div><br>
+        <div class="card-info">Student</div>
+        <div class="card-info">2018 B.A., Economics</div>
+        <div class="card-info">Grand Rapids, MI</div><br>
+        <div class="text-center">
+          <div class="btn-group" role="group">
+            <button id="card-btn3" type="button" class="btn card-btn">View Profile</button>
+            <button id="card-btn4" type="button" class="btn card-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Request a call</a>
+              <a class="dropdown-item" href="#">Send a message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="contact-card">
+        <div class="card-top"></div>
+        <img class="card-avatar" src="https://claralieu.files.wordpress.com/2016/06/deepti-headshot-square.jpg?w=848">
+        <div id="name3" class="name text-center">Meghana Ananth</div>
+        <div class="text-center">Super Cool Job Title</div><br>
+        <div class="card-info">Student</div>
+        <div class="card-info">2018 B.A., Economics</div>
+        <div class="card-info">Grand Rapids, MI</div><br>
+        <div class="text-center">
+          <div class="btn-group" role="group">
+            <button id="card-btn5" type="button" class="btn card-btn">View Profile</button>
+            <button id="card-btn6" type="button" class="btn card-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Request a call</a>
+              <a class="dropdown-item" href="#">Send a message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="contact-card">
+        <div class="card-top"></div>
+        <img class="card-avatar" src="https://claralieu.files.wordpress.com/2016/06/deepti-headshot-square.jpg?w=848">
+        <div id="name4" class="name text-center">Meghana Ananth</div>
+        <div class="text-center">Super Cool Job Title</div><br>
+        <div class="card-info">Student</div>
+        <div class="card-info">2018 B.A., Economics</div>
+        <div class="card-info">Grand Rapids, MI</div><br>
+        <div class="text-center">
+          <div class="btn-group" role="group">
+            <button id="card-btn7" type="button" class="btn card-btn">View Profile</button>
+            <button id="card-btn8" type="button" class="btn card-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Request a call</a>
+              <a class="dropdown-item" href="#">Send a message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br><br><br>
+
+
+  <footer id="footer">
+    Copyright<i class="fa fa-copyright"></i> University of Chicago 2017<br>
+  </footer>
+
+</body>
+
+
+
+
+<!-- PRIMARY COLOR:
+ primary navbar background
+ secondary navbar underlines
+ card tops
+ title links (e.g. contact name, event name)
+ primary buttons
+
+SECONDARY COLOR:
+ footer background
+ search button hover background
+
+TEXT COLOR:
+ primary nav links
+ primary navbar underlines
+ search icon hover color
+ footer text
+ (logo should apprx match text color) -->
+
+
+</html>
